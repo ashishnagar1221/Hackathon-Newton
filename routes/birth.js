@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const date = require('../models/data');
+const birthday = require('../models/data');
 
 //Display data
 router.get('/', (req, res)=>{
-    date.find({},function(err,docs){
+    birthday.find({},function(err,docs){
         if(err) 
             res.json(err);
-            console.log(docs)
+        console.log(docs)
         res.render('index');
     });
 });
@@ -14,9 +14,9 @@ router.get('/', (req, res)=>{
 // Add data
 router.post('/',(req,res)=>{
     console.log(req.body);
-    const data = new date({
+    const data = new bithday({
         name:req.body.name,
-        date:req.body.name
+        day:req.body.name
     });
     try{
          data.save();
