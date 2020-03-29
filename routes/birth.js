@@ -2,7 +2,7 @@ const router = require('express').Router();
 
 
 router.get('/', (req, res)=>{
-    res.Render('index');
+    res.render('index');
  });
 
 
