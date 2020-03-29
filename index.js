@@ -1,6 +1,7 @@
 const express = require('express');
 const routes = require('./routes/birth')
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 
 const port = process.env.PORT || 3600;
 
@@ -9,7 +10,7 @@ mongoose.connect('mongodb+srv://user:user@ashish-gupgf.mongodb.net/test?retryWri
 .catch(err =>console.log(err));
 
 var app = express();
-
+app.use(bodyParser.urlencoded({extended: false}));
 app.set('view engine','ejs')
 app.use(express.static(__dirname + "/public"));
 app.use('/',routes);
