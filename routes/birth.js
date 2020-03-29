@@ -7,7 +7,7 @@ router.get('/', (req, res)=>{
         if(err) 
             res.json(err);
         console.log(docs)
-        res.render('index');
+        res.render('index',{birthday:docs});
     });
 });
 
