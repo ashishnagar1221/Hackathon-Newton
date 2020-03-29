@@ -14,10 +14,11 @@ router.get('/', (req, res)=>{
 // Add data
 router.post('/',(req,res)=>{
     console.log(req.body);
-    const data = new bithday({
+    const data = new birthday({
         name:req.body.name,
-        day:req.body.name
+        day:req.body.day
     });
+    console.log(data)
     try{
          data.save();
         res.redirect("/");

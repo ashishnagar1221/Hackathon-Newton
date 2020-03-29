@@ -4,11 +4,9 @@ const Schema = mongoose.Schema;
 let birthday = new Schema({
     name:{
         type: String,
-        required:true
     },
     day: {
-        type: Date,
-        default:Date.now
+        type: Date
     }
 });
 
